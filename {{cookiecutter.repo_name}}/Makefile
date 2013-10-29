@@ -47,8 +47,7 @@ docs:
 	$(MAKE) -C docs html
 	#open docs/_build/html/index.html
 
-release: clean
-	cat DESCRIPTION.rst USAGE.rst INSTALLATION.rst HISTORY.rst > README.rst
+release: clean docs
 	python setup.py sdist upload
 
 sdist: clean
