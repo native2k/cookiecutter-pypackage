@@ -39,6 +39,7 @@ coverage:
 	#open htmlcov/index.html
 
 docs:
+	cat DESCRIPTION.rst USAGE.rst INSTALLATION.rst HISTORY.rst > README.rst
 	rm -f docs/{{ cookiecutter.repo_name }}.rst
 	rm -f docs/modules.rst
 	sphinx-apidoc -o docs/ {{ cookiecutter.repo_name }}
@@ -47,6 +48,7 @@ docs:
 	#open docs/_build/html/index.html
 
 release: clean
+	cat DESCRIPTION.rst USAGE.rst INSTALLATION.rst HISTORY.rst > README.rst
 	python setup.py sdist upload
 
 sdist: clean
