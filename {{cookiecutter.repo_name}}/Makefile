@@ -29,14 +29,14 @@ lint:
 test:
 	python setup.py test
 
-test-all:
+testall:
 	tox
 
 coverage:
 	coverage run --source {{ cookiecutter.repo_name }} setup.py test
 	coverage report -m
 	coverage html
-	open htmlcov/index.html
+	#open htmlcov/index.html
 
 docs:
 	rm -f docs/{{ cookiecutter.repo_name }}.rst
@@ -44,7 +44,7 @@ docs:
 	sphinx-apidoc -o docs/ {{ cookiecutter.repo_name }}
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
-	open docs/_build/html/index.html
+	#open docs/_build/html/index.html
 
 release: clean
 	python setup.py sdist upload
